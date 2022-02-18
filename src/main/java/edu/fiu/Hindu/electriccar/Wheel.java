@@ -1,6 +1,9 @@
 package edu.fiu.Hindu.electriccar;
 
-public class Wheel {
+import edu.fiu.jit.SelfCheckCapable;
+import edu.fiu.jit.SelfCheckUtils;
+
+public class Wheel implements SelfCheckCapable {
 
  private int diameter;
  private int numberOfWheels;
@@ -11,4 +14,16 @@ public class Wheel {
 	 
  }
 
+	@Override
+	public String getComponentName() {
+		// TODO Auto-generated method stub
+		return "Whee";
+	}
+
+	@Override
+	public boolean selfCheck() {
+		// TODO Auto-generated method stub
+		return SelfCheckUtils.randomCheck(0.5);
+	}
+ 
 }

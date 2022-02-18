@@ -1,6 +1,9 @@
 package edu.fiu.Hindu.electriccar;
 
-public class GearBox extends Car {
+import edu.fiu.jit.SelfCheckCapable;
+import edu.fiu.jit.SelfCheckUtils;
+
+public class GearBox implements SelfCheckCapable {
 	
 	public float gearRatio;
 	public int currentGear;
@@ -12,5 +15,19 @@ public class GearBox extends Car {
 	private void shiftDown() {
 		
 		//It Shifts The Gear Down 
+	}
+	
+	
+	
+	@Override
+	public String getComponentName() {
+		// TODO Auto-generated method stub
+		return "GearBox";
+	}
+
+	@Override
+	public boolean selfCheck() {
+		// TODO Auto-generated method stub
+		return SelfCheckUtils.randomCheck(0.5);
 	}
 }

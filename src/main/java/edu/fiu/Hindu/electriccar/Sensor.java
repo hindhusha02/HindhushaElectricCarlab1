@@ -1,6 +1,9 @@
 package edu.fiu.Hindu.electriccar;
 
-public class Sensor {
+import edu.fiu.jit.SelfCheckCapable;
+import edu.fiu.jit.SelfCheckUtils;
+
+public class Sensor implements SelfCheckCapable {
 
 	private String type;
 	private int cost;
@@ -31,4 +34,16 @@ public class Sensor {
 		//It Detects Traffic and Road Signs 
 	}
 
+	@Override
+	public String getComponentName() {
+		// TODO Auto-generated method stub
+		return "Sensors";
+	}
+
+	@Override
+	public boolean selfCheck() {
+		// TODO Auto-generated method stub
+		return SelfCheckUtils.randomCheck(0.5);
+	}
+	
 }

@@ -1,6 +1,9 @@
 package edu.fiu.Hindu.electriccar;
 
-public class Camera {
+import edu.fiu.jit.SelfCheckCapable;
+import edu.fiu.jit.SelfCheckUtils;
+
+public class Camera implements SelfCheckCapable {
 
 private String frontCam;
 private String backCam;
@@ -15,6 +18,18 @@ private void capturePicture() {
 
 private void captureVideo() {
 	//It Captures Videos
+}
+
+@Override
+public String getComponentName() {
+	// TODO Auto-generated method stub
+	return "Sensors";
+}
+
+@Override
+public boolean selfCheck() {
+	// TODO Auto-generated method stub
+	return SelfCheckUtils.randomCheck(0.5);
 }
 
 }

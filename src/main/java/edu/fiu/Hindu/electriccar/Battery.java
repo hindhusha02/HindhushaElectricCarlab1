@@ -1,6 +1,9 @@
 package edu.fiu.Hindu.electriccar;
 
-public class Battery {
+import edu.fiu.jit.SelfCheckCapable;
+import edu.fiu.jit.SelfCheckUtils;
+
+public class Battery implements SelfCheckCapable {
 
 	private int capacity;
 	private String type;
@@ -16,5 +19,16 @@ public class Battery {
 		//It Power Off's  The Car
 	}
 	
+	@Override
+	public String getComponentName() {
+		// TODO Auto-generated method stub
+		return "Battery";
+	}
+
+	@Override
+	public boolean selfCheck() {
+		// TODO Auto-generated method stub
+		return SelfCheckUtils.randomCheck(0.5);
+	}
 
 }

@@ -1,6 +1,9 @@
 package edu.fiu.Hindu.electriccar;
 
-public class Brake {
+import edu.fiu.jit.SelfCheckCapable;
+import edu.fiu.jit.SelfCheckUtils;
+
+public class Brake implements SelfCheckCapable{
 
 	private String Type;
 
@@ -9,4 +12,16 @@ public class Brake {
 		
 	}
 
+	@Override
+	public String getComponentName() {
+		// TODO Auto-generated method stub
+		return "Brakes";
+	}
+
+	@Override
+	public boolean selfCheck() {
+		// TODO Auto-generated method stub
+		return SelfCheckUtils.randomCheck(0.5);
+	}
+	
 }

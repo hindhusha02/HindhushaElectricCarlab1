@@ -1,6 +1,9 @@
 package edu.fiu.Hindu.electriccar;
 
-public class Door {
+import edu.fiu.jit.SelfCheckCapable;
+import edu.fiu.jit.SelfCheckUtils;
+
+public class Door implements SelfCheckCapable{
 
 	private String Doors;
 	
@@ -20,5 +23,17 @@ public class Door {
 		//It Removes The ChildLock
 	}
 
+	
+	@Override
+	public String getComponentName() {
+		// TODO Auto-generated method stub
+		return "Doors";
+	}
+
+	@Override
+	public boolean selfCheck() {
+		// TODO Auto-generated method stub
+		return SelfCheckUtils.randomCheck(0.5);
+	}
 	
 }
