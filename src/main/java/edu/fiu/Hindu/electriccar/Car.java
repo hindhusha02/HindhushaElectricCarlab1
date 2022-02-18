@@ -27,6 +27,8 @@ public class Car implements GenericComponent{
 	private ElectronicControlUnit myElectronicControlUnit;
 	private DataCenter myDataCenter;
 	private SelfDriveModule mySelfDriveModule;
+	private Software mySoftware;
+	private ImageProcessor myImageProcessor;
 	private void moveForward(){
 		//It Moves The Vehicle Forward
 	}
@@ -63,6 +65,8 @@ public class Car implements GenericComponent{
 		myElectronicControlUnit = new ElectronicControlUnit();
 		myDataCenter = new DataCenter();
 		mySelfDriveModule = new SelfDriveModule();
+		mySoftware = new Software();
+		myImageProcessor = new ImageProcessor();
 		
 		
 		
@@ -92,7 +96,7 @@ public class Car implements GenericComponent{
 		@Override
 		public List<SelfCheckCapable> getSubComponents() {
 			List internalComponents = new ArrayList(); // create an empty list
-			Collections.addAll(internalComponents, myAcceleration,myBattery, myBody, myBrake, myCamera, myDoor, myGearBox, myGearBoxType, mySensor, mySuspension, myWheel, myWindow, myElectronicControlUnit,myDataCenter,mySelfDriveModule); // add all your sub components
+			Collections.addAll(internalComponents, myAcceleration,myBattery, myBody, myBrake, myCamera, myDoor, myGearBox, myGearBoxType, mySensor,mySoftware,myImageProcessor, mySuspension, myWheel, myWindow, myElectronicControlUnit,myDataCenter,mySelfDriveModule); // add all your sub components
 			return internalComponents;
 
 		}
